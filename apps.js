@@ -349,14 +349,28 @@ const levels = {
   hardLevel: document.getElementById("level-hard"),
 };
 
+// Create an audio element
+const audioElement = document.createElement('audio');
+
 playAgain.style.display = "none";
 playerNameElement.style.display = "none"
 scoreElement.style.display = "none"
 timeElement.style.display = "none"
 
+//DUMMY CARDS
+  for(let i = 0; i < cardsArray['hard'].length; i++){
+    const dummyCardsElement = document.createElement('img');
+    dummyCardsElement.setAttribute('src', 'images/blank.png')
+    dummyCardsElement.disabled = true
+    grid.append(dummyCardsElement)
+  }
+
+
 
 startGame.addEventListener("click", function (event) {
   event.preventDefault();
+
+  gameStarted = true
 
   const trimPlayerName = inputPlayerName.value.trim();
   const selectedLevel = getSelectedLevel();
@@ -388,6 +402,12 @@ startGame.addEventListener("click", function (event) {
     playerNameElement.style.display = "inline"
     scoreElement.style.display = "inline"
     timeElement.style.display = "inline"
+
+    // Remove the dummy cards
+    const dummyCards = grid.querySelectorAll('img');
+    dummyCards.forEach(card => card.remove());
+
+  
   
 
     countDownTimer = setInterval(countDown, 500);
@@ -440,11 +460,14 @@ function checkMatch(selectedLevel) {
     cards[chosenCardsId[0]].classList.add("found");
     cards[chosenCardsId[1]].classList.add("found");
     matchFound.push(chosenCards);
-    console.log(matchFound);
+    audioElement.src = 'audio/1.mp3';
+    audioElement.play();
   } else if (chosenCards[0] !== chosenCards[1]) {
     moveDisplay.innerHTML = "BAKA !!!! Wrong match muscle head!!!";
     cards[chosenCardsId[0]].setAttribute("src", "images/blank.png");
     cards[chosenCardsId[1]].setAttribute("src", "images/blank.png");
+    audioElement.src = 'audio/2.mp3';
+    audioElement.play();
   }
 
   console.log(chosenCards);
