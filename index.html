@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Guessing Game !</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="guessing-game">
+
+
+
+        <fieldset>
+
+          <h1 class="title-heading">GUESSING GAME</h1>
+          <hr><br>
+
+          <input class="input" type="text" id="enter-name" placeholder="Enter player name" />
+
+          <label for="level-easy" class="radio-label"><input type="radio" id="level-easy" name="levels" value="easy" class="levels"/>Easy</label>
+          <label for="level-normal" class="radio-label"><input type="radio" id="level-normal" name="levels" value="normal" class="levels"/>Normal</label>
+          <label for="level-hard" class="radio-label"><input type="radio" id="level-hard" name="levels" value="hard" class="levels"/>Hard</label>
+          
+
+          <button type="submit" class="btn">Start Game</button>
+
+        </fieldset>
+  
+
+  
+        <div class="headings">
+            
+          <h2 class="player-name headings-info">Player: <span id="player-name" class="headings-info-span"></span></h2>
+          <h2 class="player-score headings-info">Score: <span id="score" class="headings-info-span"></span></h2>
+          <h2 class="player-time headings-info">Time: <span id="time" class="headings-info-span"></span></h2>
+
+
+        </div>
+
+        
+        <hr><br>
+
+  
+
+        <div class="grid-container">
+          <div id="grid" class="grid"></div>
+
+        </div>
+        <span id="moveInfoDisplay"></span>
+      
+        <span id="result"></span>
+  
+        <button id="play-again" onClick="window.location.reload();"  class="btn">Play Again ?</button>
+
+      </div>
+    </div>
+    
+
+    
+  </body>
+  <script src="apps.js"></script>
+</html>

@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px red dotted */
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.grid-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  width: 900px;
+  max-width: 1000px;
+  min-width: 600px;
+  gap: 10px;
+}
+
+.title-heading {
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.grid img {
+  width: 100px;
+  height: 100%;
+ 
+}
+
+.hidden {
+  display: none;
+}
+
+#moveDisplay {
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.headings-info {
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.radio-label {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px;
+
+}
+
+.levels {
+  margin-right: 10px;
+}
+
+.headings-info-span{
+  color: #007BFF;
+}
+
+.headings{
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.found {
+  filter: grayscale(1);
+  transition: 0.5s ease;
+}
+
+.input, .btn {
+  
+  width: 100%;
+  padding: 10px;
+  height: 40px;
+  border: none;
+  
+
+}
+
+fieldset {
+Border: 1px Solid #CCCCCC;
+Border-radius: 4px;
+padding: 10px;
+}
+
+.btn {
+  color:#FFFFFF;
+  background-color: #007BFF;
+  cursor: pointer;
+  margin: 20px 0;
+
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.disableImg {
+  visibility: none;
+}
